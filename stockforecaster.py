@@ -186,7 +186,7 @@ plt.show()
 # Create seed
 seed = x_test[-1]
 proj_predictions = []
-num_iterations = 100 # Change this number to have the model predict more values (closing prices)
+num_iterations = 100 # Change this number to have the model forecast farther less far into the future
 
 # Loop through num_iterations times and add model's prediction to inputs each time
 for iter in range(num_iterations):
