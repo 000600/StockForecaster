@@ -2,7 +2,7 @@
 
 ## The Neural Network
 
-This neural network forecasts the next day's opening price of a publicly listed stock based on the previous *n* days (*n* has a default value of 5). The model will predict a value a scaled stock price, which can be converted into a realistic stock price with the line **scaler.inverse_transform(model.predict(x))** where *x* is a list of the previous five closing prices. Since the model in a regression algorithm, it uses a  mean squared error loss function and has 1 output neuron. The model uses a standard Adam optimizer with a learning rate of 0.001, and has an architecture consisting of:
+This neural network forecasts the next day's opening price of a publicly listed stock based on the previous *n* days (*n* is named **seq_len** in the file has a default value of 5). The model will predict a value a scaled stock price, which can be converted into a realistic stock price with the line **scaler.inverse_transform(model.predict(x))** where *x* is a list of the previous five closing prices. Since the model in a regression algorithm, it uses a  mean squared error loss function and has 1 output neuron. The model uses a standard Adam optimizer with a learning rate of 0.001, and has an architecture consisting of:
 - 1 Batch Normalization layer
 - 1 Input layer (with 128 input neurons and a ReLU activation function)
 - 2 Hidden layers (each with 64 neurons and a ReLU activation function)
