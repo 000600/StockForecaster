@@ -2,7 +2,7 @@
 
 ## The Neural Network
 
-This neural network is an RNN that forecasts the next day's opening price of a publicly listed stock based on the previous *n* days (*n* is named **seq_len** in the file has a default value of 5). The model will predict a value a scaled stock price, which can be converted into a realistic stock price with the line **scaler.inverse_transform(model.predict(x))** where *x* is a list of the previous **seq_len** closing prices. Since the model in a regression algorithm, it uses a mean squared error loss function and has 1 output neuron. The model uses a standard Adam optimizer with a learning rate of 0.001, and has an architecture consisting of:
+This neural network is an RNN that forecasts the next day's t of a publicly listed stock based on the previous *n* days (*n* is named **seq_len** in the file has a default value of 5). The model will predict a value a scaled stock price, which can be converted into a realistic stock price with the line **scaler.inverse_transform(model.predict(x))** where *x* is a list of the previous **seq_len** closing prices. Since the model in a regression algorithm, it uses a mean squared error loss function and has 1 output neuron. The model uses a standard Adam optimizer with a learning rate of 0.001, and has an architecture consisting of:
 - 1 Batch Normalization layer
 - 1 LSTM layer (with 50 neurons, an input shape of 5, and a Tanh activation function)
 - 1 Hidden layer (an LSTM layer with 50 neurons and a Tanh activation function)
@@ -12,7 +12,7 @@ This neural network is an RNN that forecasts the next day's opening price of a p
 Feel free to further tune the hyperparameters or build upon the model!
 
 ## The Dataset
-The dataset consists of input and output value sets for each day. For any given day, the input value is [*closing price 5 days ago*, *closing price 4 days ago*, *closing price 3 days ago*, *closing price 2 days ago*, *closing price 1 day ago*] and output value is the closing price of the stock that day. The number of values in the input list is determined by the **seq_len** variable. The data is downloaded from the Yahoo Finance API, yfinance, and concerns the entire stock price timeframe (since the stock's IPO or SPAC), with closing prices collected every day.
+The dataset consists of input and output value sets for each day. For any given day, the input value is [*closing price 5 days ago*, *closing price 4 days ago*, *closing price 3 days ago*, *closing price 2 days ago*, *closing price 1 day ago*] and output value is the closing price of the stock that day: [*closing price today*]. The number of values in the input list is determined by the **seq_len** variable. The data is downloaded from the Yahoo Finance API (the python package is yfinance) and contains the closing price of a stock every day since the stock's first public offering (either through an IPO of SPAC). Note that the data is scaled with Scikit-Learn's **MinMaxScaler()**.
 
 ## Libraries
 This neural network was created with the help of the Tensorflow, Imbalanced-Learn, and Scikit-Learn libraries.
