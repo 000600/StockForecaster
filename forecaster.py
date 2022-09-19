@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 import yfinance as yf
 
-# Ticker (change to have the model predict on a different stock)
+# Ticker (change to have the model predict on a different listed security)
 ticker = 'BRK-B'
 
 # Download raw data
