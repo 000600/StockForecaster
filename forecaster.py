@@ -12,14 +12,14 @@ from sklearn.preprocessing import MinMaxScaler
 import yfinance as yf
 
 # Ticker (change to have the model predict on a different stock)
-ticker = 'BRK-A'
+ticker = 'BRK-B'
 
 # Download raw data
 data = yf.download(tickers = ticker, period = 'max', interval = '1d')
 
-# Collect opening prices as data
-open = data[['Close']]
-df = open.values
+# Collect closing prices as data
+close = data[['Close']]
+df = close.values
 
 # View data (stock price)
 plt.plot(df)
