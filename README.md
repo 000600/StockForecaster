@@ -14,7 +14,7 @@ Feel free to further tune the hyperparameters or build upon the model!
 ## The Dataset
 The dataset consists of input and output value sets for each day. For any given day, the input value is [*closing price 5 days ago*, *closing price 4 days ago*, *closing price 3 days ago*, *closing price 2 days ago*, *closing price 1 day ago*] and the output value is the closing price of the stock that day: [*closing price today*]. The number of values in the input list is determined by the **seq_len** variable. The data is downloaded from the Yahoo Finance API (the Python package is yfinance) and contains the closing price of a stock every day since the stock's first public offering (either through an IPO or SPAC). In order to change which stock's closing price is represented in the dataset, simply change the ticker specified near the top of the code.
 
-Please note that the data is scaled with Scikit-Learn's **MinMaxScaler()**, although all values are rescaled before they are graphed our outputted.
+Please note that the data is scaled with Scikit-Learn's **MinMaxScaler()**, although all values are rescaled before they are graphed or outputted.
 
 ## Libraries
 This neural network was created with the help of the Tensorflow, Scikit-Learn, and Yahoo Finance API libraries.
